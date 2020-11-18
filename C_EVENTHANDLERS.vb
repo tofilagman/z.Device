@@ -29,7 +29,7 @@ Public NotInheritable Class C_EVENTHANDLERS
         Public Hour As Integer
         Public Minute As Integer
         Public Second As Integer
-        ' Public CardNo As String
+        Public CardNo As String
     End Class
 
     Public Class AttTransactionEventArgsEx : Inherits EventArgs
@@ -43,7 +43,7 @@ Public NotInheritable Class C_EVENTHANDLERS
         Public Hour As Integer
         Public Minute As Integer
         Public Second As Integer
-        ' Public CardNo As String
+        Public CardNo As String
     End Class
 
     Public Class HIdNumEventArgs : Inherits EventArgs

@@ -54,6 +54,21 @@ Public Class C_DEVICE
         End Try
     End Sub
 
+    Public Sub New(ID As Int32, IP As String, Port As Int32, ComPort As Int32)
+        Try
+            AddHandler AppDomain.CurrentDomain.UnhandledException, New UnhandledExceptionEventHandler(AddressOf unhndled)
+            Me.mZ = New CZKEM
+            Me.mIP = IP
+            Me.mPort = Port
+            Me.mID = ID
+            Me.mComPort = ComPort
+        Catch ex As AccessViolationException
+            Throw ex
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
     Public Sub New(ID As Int32, ComPort As Int32, Optional BaudRate As Int32 = 115200)
         Try
             AddHandler AppDomain.CurrentDomain.UnhandledException, New UnhandledExceptionEventHandler(AddressOf unhndled)
@@ -1542,6 +1557,10 @@ Public Class C_DEVICE
     'Public Function EnableKeyboard(enble As Boolean) As Boolean
 
     'End Function
+
+    Public Function getDeviceID() As Int32
+        Return mID
+    End Function
 
 #End Region
 
